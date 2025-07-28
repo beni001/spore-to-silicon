@@ -8,35 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Kardashev-class color system */
+    --background: 220 27% 4%;
+    --foreground: 200 27% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 27% 6%;
+    --card-foreground: 200 27% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 27% 6%;
+    --popover-foreground: 200 27% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 173 100% 50%;
+    --primary-foreground: 220 27% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 27% 12%;
+    --secondary-foreground: 200 27% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 27% 10%;
+    --muted-foreground: 200 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 261 100% 70%;
+    --accent-foreground: 220 27% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 200 27% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 27% 12%;
+    --input: 220 27% 10%;
+    --ring: 173 100% 50%;
 
-    --radius: 0.5rem;
+    /* Advanced gradients for Kardashev UI */
+    --gradient-neural: linear-gradient(135deg, hsl(173 100% 50%), hsl(261 100% 70%));
+    --gradient-quantum: linear-gradient(45deg, hsl(173 100% 50% / 0.1), hsl(261 100% 70% / 0.1));
+    --gradient-plasma: radial-gradient(circle at 50% 50%, hsl(173 100% 50% / 0.3), transparent 70%);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(173 100% 50% / 0.5);
+    --glow-accent: 0 0 20px hsl(261 100% 70% / 0.3);
+    --shadow-neural: 0 10px 30px hsl(173 100% 50% / 0.2);
+
+    /* Advanced animations */
+    --transition-neural: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-quantum: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +115,58 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(173 100% 50% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(261 100% 70% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(173 100% 50% / 0.02) 0%, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .gradient-neural {
+    background: var(--gradient-neural);
+  }
+  
+  .gradient-quantum {
+    background: var(--gradient-quantum);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  .shadow-neural {
+    box-shadow: var(--shadow-neural);
+  }
+  
+  .transition-neural {
+    transition: var(--transition-neural);
+  }
+  
+  .transition-quantum {
+    transition: var(--transition-quantum);
+  }
+  
+  .neural-border {
+    border: 1px solid hsl(173 100% 50% / 0.2);
+    box-shadow: 0 0 10px hsl(173 100% 50% / 0.1);
+  }
+  
+  .quantum-glow {
+    animation: quantum-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes quantum-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px hsl(173 100% 50% / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px hsl(173 100% 50% / 0.6), 0 0 30px hsl(261 100% 70% / 0.3);
   }
 }
