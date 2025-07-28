@@ -75,3 +75,21 @@ git clone https://github.com/yourname/sporenet-cli.git
 cd sporenet-cli
 npm install
 chmod +x index.js
+
+🧠 Usage
+🔧 Convert and Compile Your Model
+bash
+Copy
+Edit
+./index.js build
+The CLI will prompt you to:
+
+Choose your model format (e.g. .h5, .onnx)
+
+Provide the path to the model
+
+Select the target hardware (e.g. ESP32)
+
+Automatically quantize → convert → compile → generate .bin
+
+
