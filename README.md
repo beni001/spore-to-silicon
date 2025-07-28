@@ -37,4 +37,15 @@ Inspired by the portability of WebAssembly and the ease of Docker, SporeNet simp
 ---
 
 ## 📁 Project Structure
-
+sporenet-cli/
+├── index.js # Main CLI entry point
+├── scripts/
+│ └── convert.py # Converts and quantizes AI models
+├── firmware/ # Embedded firmware template (TFLite Micro)
+│ ├── main/
+│ ├── CMakeLists.txt
+│ └── ...
+├── converted_model.tflite # Output model (auto-generated)
+├── README.md
+├── package.json
+└── .gitignore
