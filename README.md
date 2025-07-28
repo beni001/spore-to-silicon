@@ -49,3 +49,29 @@ sporenet-cli/
 ├── README.md
 ├── package.json
 └── .gitignore
+
+
+
+---
+
+## 🧪 Getting Started
+
+### 📌 Prerequisites
+
+- Node.js ≥ 18.x
+- Python 3.8+
+- `tensorflow` (for model conversion)
+- `esptool.py` (for ESP32 flashing)
+- ESP-IDF or Arduino CLI
+- `make`, `cmake` (for firmware build)
+- ESP32 development board (DevKitC, WROOM, S3, etc.)
+
+---
+
+### ⚙️ Installation
+
+```bash
+git clone https://github.com/yourname/sporenet-cli.git
+cd sporenet-cli
+npm install
+chmod +x index.js
