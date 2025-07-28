@@ -1,0 +1,44 @@
+{
+  "name": "sporenet-cli",
+  "version": "0.1.0",
+  "description": "🧬 Convert ML models to ESP32-ready binaries",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "sporenet": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "machine-learning",
+    "esp32",
+    "tensorflow",
+    "onnx",
+    "pytorch",
+    "embedded",
+    "iot",
+    "tinyml",
+    "quantization",
+    "firmware"
+  ],
+  "author": "SporeNet Team",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "chalk": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beni001/spore-to-silicon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beni001/spore-to-silicon/issues"
+  },
+  "homepage": "https://github.com/beni001/spore-to-silicon#readme"
+}
